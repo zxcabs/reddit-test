@@ -1,0 +1,36 @@
+{
+  "name": "reddit-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Evgeny Reznichenko <kusakyky@gmail.com>",
+  "license": " ",
+  "scripts": {
+    "test": "mocha",
+    "server:dev": "nodemon --watch src/server/ --config scripts/nodemon/server.config.json ./src/server/index.js",
+    "web:dev": "webpack-dev-server --config scripts/webpack/develop.config.js --inline --progress",
+    "dev": "./run_dev",
+    "web:build": "webpack --config scripts/webpack/production.config.js",
+    "server:prod": "NODE_ENV=production SERVER_PORT=3000 node src/server/index.js",
+    "prod": "yarn run web:build && yarn run server:prod"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "expect.js": "^0.3.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.12.0",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "json2csv": "^3.11.1",
+    "multer": "^1.3.0",
+    "node-fetch": "^1.7.3",
+    "object-path": "^0.11.4",
+    "sqlstring": "^2.2.0"
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit test</title>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="forms-container">
+        <div class="form-block">
+            <h2>order</h2>
+            <form name="order">
+                <div>
+                    url:
+                    <input name="url" placeholder="enter url" required value="https://www.reddit.com/r/videos/.json"/>
+                </div>
+
+                <div>
+                    order by:
+                    <select name="orderBy">
+                        <option value="data.created_utc" selected>created</option>
+                        <option value="data.score">score</option>
+                    </select>
+                </div>
+
+                <div>
+                    order direction:
+                    <select name="orderDir">
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desk</option>
+                    </select>
+                </div>
+
+                <div>
+                    format:
+                    <select name="format">
+                        <option value="csv" selected>csv</option>
+                        <option value="sql">sql</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div>additional params</div>
+
+                    <div class="additional-for-csv">
+                        <div>
+                            delimiter:
+                            <input type="text" name="delimiter" value=",">
+                        </div>
+                        <div>
+                            fields:
+                            <input type="text" name="fields" value="data.id, data.title, data.created_utc, data.score">
+                        </div>
+                    </div>
+
+                    <div class="additional-for-sql" style="display: none">
+                        <div>
+                            table name:
+                            <input type="text" name="tableName" value="myTable" disabled>
+                        </div>
+                        <div>
+                            fields:
+                            <input type="text" name="fields" value="data.id=id, data.title=title, data.created_utc=created, data.score=score" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">sort</button>
+            </form>
+        </div>
+        <div class="form-block">
+            <h2>group</h2>
+            <form name="group">
+                <div>
+                    url:
+                    <input name="url" placeholder="enter url" required value="https://www.reddit.com/r/videos/.json"/>
+                </div>
+
+                <div>
+                    group by:
+                    <input name="groupBy" placeholder="group by" required value="data.domain" />
+                </div>
+
+                <div>
+                    order direction:
+                    <select name="orderDir">
+                        <option value="asc">asc</option>
+                        <option value="desc" selected>desk</option>
+                    </select>
+                </div>
+
+                <div>
+                    format:
+                    <select name="format">
+                        <option value="csv" selected>csv</option>
+                        <option value="sql">sql</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div>additional params</div>
+
+                    <div class="additional-for-csv">
+                        <div>
+                            delimiter:
+                            <input type="text" name="delimiter" value=",">
+                        </div>
+                        <div>
+                            fields:
+                            <input type="text" name="fields" value="domain, count, score">
+                        </div>
+                    </div>
+
+                    <div class="additional-for-sql" style="display: none">
+                        <div>
+                            table name:
+                            <input type="text" name="tableName" value="myTable" disabled>
+                        </div>
+                        <div>
+                            fields:
+                            <input type="text" name="fields" value="domain, count, score" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">sort</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <h2>log</h2>
+        <textarea class="log-area" name="log" cols="150" rows="15" readonly></textarea>
+    </div>
+<script type="text/javascript" src="index.js"></script></body>
+</html>

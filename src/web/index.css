@@ -1,0 +1,11 @@
+.forms-container {
+    display: flex;
+}
+
+.form-block {
+    width: 50%;
+}
+
+.log-area {
+    width: 100%;
+}

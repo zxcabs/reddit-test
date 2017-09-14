@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+yarn run server:dev &
+PIDS[0]=$!
+
+yarn run web:dev &
+PIDS[1]=$!
+
+trap "kill ${PIDS[*]}" SIGINT
+
+wait
